@@ -1,62 +1,131 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import * as React from "react"
+import { Link } from "react-router-dom"
+import { BagVoyageCard, BagVoyageCardContent, BagVoyageCardHeader, BagVoyageCardTitle } from "@/components/ui/bagvoyage-card"
+import { BagVoyageButton } from "@/components/ui/bagvoyage-button"
+import { BagVoyageInput } from "@/components/ui/bagvoyage-input"
+import { Logo } from "@/components/ui/logo"
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
+    <div className="min-h-screen bg-bagvoyage-background">
+      <div className="max-w-5xl mx-auto p-4">
+        {/* Main Container */}
+        <BagVoyageCard className="w-full max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-6 py-7">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <Logo />
+                <h1 className="text-xl font-bold text-bagvoyage-text-primary">BagVoyage</h1>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <BagVoyageInput 
+                    label="Date" 
+                    placeholder="2025-08-15" 
+                    className="w-48"
+                  />
+                  <BagVoyageInput 
+                    label="Flight" 
+                    placeholder="MU123 / Q2 201" 
+                    className="w-36"
+                  />
+                </div>
+                <div className="mt-6">
+                  <BagVoyageButton variant="secondary" size="sm">
+                    Session
+                  </BagVoyageButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Quick Actions */}
+              <div className="lg:col-span-1">
+                <BagVoyageCard>
+                  <BagVoyageCardHeader>
+                    <BagVoyageCardTitle className="text-2xl">
+                      Quick<br />Actions
+                    </BagVoyageCardTitle>
+                  </BagVoyageCardHeader>
+                  <BagVoyageCardContent className="space-y-4">
+                    <Link to="/tag-scan">
+                      <BagVoyageButton className="w-full h-14 text-base">
+                        Tag
+                      </BagVoyageButton>
+                    </Link>
+                    <Link to="/retrieve-scan">
+                      <BagVoyageButton className="w-full h-14 text-base">
+                        Retrieve
+                      </BagVoyageButton>
+                    </Link>
+                    <Link to="/bag-details">
+                      <BagVoyageButton variant="secondary" className="w-full h-14 text-base">
+                        Details
+                      </BagVoyageButton>
+                    </Link>
+                    <BagVoyageButton variant="secondary" className="w-full h-14 text-base">
+                      Manual Entry
+                    </BagVoyageButton>
+                    
+                    {/* HID Toggle */}
+                    <div className="flex items-center justify-between pt-4">
+                      <span className="text-base text-bagvoyage-text-secondary">HID</span>
+                      <div className="relative">
+                        <div className="w-14 h-7 bg-bagvoyage-button-border border border-bagvoyage-button-border rounded-full">
+                          <div className="w-5 h-5 bg-white rounded-full mt-1 ml-1 transition-transform"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </BagVoyageCardContent>
+                </BagVoyageCard>
+              </div>
+
+              {/* Current Session */}
+              <div className="lg:col-span-2">
+                <BagVoyageCard>
+                  <BagVoyageCardHeader>
+                    <BagVoyageCardTitle className="text-2xl">
+                      Current Session
+                    </BagVoyageCardTitle>
+                  </BagVoyageCardHeader>
+                  <BagVoyageCardContent>
+                    {/* Stats Cards */}
+                    <div className="grid grid-cols-3 gap-4 mb-6">
+                      <div className="bg-bagvoyage-item border border-bagvoyage-border rounded-xl p-4">
+                        <div className="text-2xl font-bold text-bagvoyage-text-primary mb-2">68</div>
+                        <div className="text-xs text-bagvoyage-text-secondary">Tags Saved</div>
+                      </div>
+                      <div className="bg-bagvoyage-item border border-bagvoyage-border rounded-xl p-4">
+                        <div className="text-2xl font-bold text-bagvoyage-text-primary mb-2">54</div>
+                        <div className="text-xs text-bagvoyage-text-secondary">Matched</div>
+                      </div>
+                      <div className="bg-bagvoyage-item border border-bagvoyage-border rounded-xl p-4">
+                        <div className="text-2xl font-bold text-bagvoyage-text-primary mb-2">14</div>
+                        <div className="text-xs text-bagvoyage-text-secondary">Unmatched</div>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-4">
+                      <BagVoyageButton variant="secondary">
+                        Export CSV
+                      </BagVoyageButton>
+                      <BagVoyageButton variant="secondary">
+                        View
+                      </BagVoyageButton>
+                    </div>
+                  </BagVoyageCardContent>
+                </BagVoyageCard>
+              </div>
+            </div>
+          </div>
+        </BagVoyageCard>
       </div>
     </div>
-  );
+  )
 }
