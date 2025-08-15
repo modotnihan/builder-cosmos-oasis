@@ -70,42 +70,48 @@ export default function Index() {
                     }}
                   />
                 </div>
-                
-                {/* Flight Input */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
-                  <label style={{ fontSize: '0.75rem', color: '#8EA0B5' }}>Flight</label>
-                  <input
-                    type="text"
-                    placeholder="MU123 / Q2 201"
+
+                {/* Flight Input + Session Button Container */}
+                <div style={{ display: 'flex', alignItems: 'end', gap: '0.75rem' }}>
+                  {/* Flight Input */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                    <label style={{ fontSize: '0.75rem', color: '#8EA0B5' }}>Flight</label>
+                    <input
+                      type="text"
+                      placeholder="MU123 / Q2 201"
+                      style={{
+                        width: '9rem',
+                        height: '2.5rem',
+                        borderRadius: '0.75rem',
+                        border: '1px solid #223141',
+                        backgroundColor: '#0E141C',
+                        padding: '0 0.75rem',
+                        fontSize: '0.875rem',
+                        color: '#757575'
+                      }}
+                    />
+                  </div>
+
+                  {/* Session Button */}
+                  <button
                     style={{
-                      width: '9rem',
                       height: '2.5rem',
+                      padding: '0 1rem',
                       borderRadius: '0.75rem',
-                      border: '1px solid #223141',
-                      backgroundColor: '#0E141C',
-                      padding: '0 0.75rem',
-                      fontSize: '0.875rem',
-                      color: '#757575'
+                      border: '1px solid #27384B',
+                      backgroundColor: '#17212C',
+                      color: '#E7EEF7',
+                      fontSize: '0.8125rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
-                  />
+                  >
+                    Session
+                  </button>
                 </div>
-                
-                {/* Session Button */}
-                <button
-                  style={{
-                    height: '1.9375rem',
-                    padding: '0 1rem',
-                    borderRadius: '0.75rem',
-                    border: '1px solid #27384B',
-                    backgroundColor: '#17212C',
-                    color: '#E7EEF7',
-                    fontSize: '0.8125rem',
-                    fontWeight: 'bold',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Session
-                </button>
               </div>
             </div>
           </div>
