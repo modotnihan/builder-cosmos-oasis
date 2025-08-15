@@ -18,8 +18,8 @@ export default function RetrieveScan() {
         {/* Main Container */}
         <BagVoyageCard className="w-full max-w-4xl mx-auto">
           {/* Header */}
-          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-6 py-7">
-            <div className="flex items-center justify-between">
+          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-4 md:px-6 py-7">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <Link to="/" className="flex flex-col gap-1 text-bagvoyage-text-secondary hover:text-bagvoyage-text-primary transition-colors">
                   <div className="flex items-center gap-1">
@@ -28,13 +28,13 @@ export default function RetrieveScan() {
                   <span className="font-bold text-sm">Home</span>
                 </Link>
                 <div>
-                  <h1 className="text-2xl font-bold text-bagvoyage-text-primary">Retrieve –</h1>
-                  <h1 className="text-2xl font-bold text-bagvoyage-text-primary">Scan</h1>
+                  <h1 className="text-xl md:text-2xl font-bold text-bagvoyage-text-primary">Retrieve –</h1>
+                  <h1 className="text-xl md:text-2xl font-bold text-bagvoyage-text-primary">Scan</h1>
                 </div>
               </div>
-              
-              <div className="text-base text-bagvoyage-text-secondary max-w-xs">
-                Scans are matched by <span className="font-bold">Date + Flight</span> across<br />
+
+              <div className="text-sm md:text-base text-bagvoyage-text-secondary max-w-xs">
+                Scans are matched by <span className="font-bold">Date + Flight</span> across<br className="hidden md:block" />
                 all clients.
               </div>
             </div>
