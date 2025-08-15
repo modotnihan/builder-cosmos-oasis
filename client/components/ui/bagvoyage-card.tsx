@@ -57,10 +57,14 @@ BagVoyageCardTitle.displayName = "BagVoyageCardTitle"
 const BagVoyageCardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-bagvoyage-text-secondary", className)}
+    className={cn("text-sm", className)}
+    style={{
+      color: '#8EA0B5',
+      ...style
+    }}
     {...props}
   />
 ))
