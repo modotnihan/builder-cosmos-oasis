@@ -20,20 +20,20 @@ export default function TagScan() {
         {/* Main Container */}
         <BagVoyageCard className="w-full max-w-4xl mx-auto">
           {/* Header */}
-          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-6 py-7">
-            <div className="flex items-center justify-between">
+          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-4 md:px-6 py-7">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <Link to="/" className="flex items-center gap-1 text-bagvoyage-text-secondary hover:text-bagvoyage-text-primary transition-colors">
                   <ChevronLeft className="w-4 h-4" />
                   <span className="font-bold">Home</span>
                 </Link>
-                <h1 className="text-2xl font-bold text-bagvoyage-text-primary">Tag – Scan</h1>
+                <h1 className="text-xl md:text-2xl font-bold text-bagvoyage-text-primary">Tag – Scan</h1>
               </div>
-              
-              <div className="flex items-center gap-4">
-                <BagVoyageInput 
-                  placeholder="Client name" 
-                  className="w-48"
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <BagVoyageInput
+                  placeholder="Client name"
+                  className="w-full sm:w-48"
                 />
                 <BagVoyageButton variant="secondary">
                   Manual Entry
