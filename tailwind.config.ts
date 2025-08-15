@@ -60,18 +60,17 @@ export default {
         // BagVoyage Custom Colors
         'bagvoyage': {
           background: '#11161D',
-          'card-bg': '#171E27',
-          'input-bg': '#0E141C',
-          'border': '#223141',
+          card: '#171E27',
+          input: '#0E141C',
+          border: '#223141',
           'border-dashed': '#2A3A4D',
           'text-primary': '#E7EEF7',
           'text-secondary': '#8EA0B5',
           'text-muted': '#757575',
           'button-secondary': '#17212C',
           'button-border': '#27384B',
-          'scan-bg': '#0D131A',
-          'scan-border': '#2A3A4D',
-          'item-bg': '#0F1620',
+          scan: '#0D131A',
+          item: '#0F1620',
         },
         'brand': {
           blue: '#4AA8FF',
@@ -84,18 +83,6 @@ export default {
           orange: '#FFB84A',
           'orange-light': '#FFD79A',
           'orange-border': '#7A561E',
-        },
-        'status': {
-          matched: {
-            bg: 'rgba(123, 219, 167, 0.15)',
-            text: '#9BE6C1',
-            border: '#2D6F55',
-          },
-          unmatched: {
-            bg: 'rgba(255, 184, 74, 0.12)',
-            text: '#FFD79A',
-            border: '#7A561E',
-          },
         },
       },
       borderRadius: {
