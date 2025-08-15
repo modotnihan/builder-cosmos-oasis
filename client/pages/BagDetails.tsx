@@ -76,50 +76,87 @@ export default function BagDetails() {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             <BagVoyageCard>
               <BagVoyageCardHeader>
                 <BagVoyageCardTitle className="text-lg">All Tags</BagVoyageCardTitle>
               </BagVoyageCardHeader>
               <BagVoyageCardContent>
-                {/* Table Header */}
-                <div className="grid grid-cols-6 gap-4 pb-4 text-sm text-bagvoyage-text-secondary">
-                  <div className="col-span-1">Tag</div>
-                  <div className="col-span-1">Client</div>
-                  <div className="col-span-1">Date</div>
-                  <div className="col-span-1">Flight</div>
-                  <div className="col-span-1">Status</div>
-                  <div className="col-span-1"></div>
+                {/* Desktop Table */}
+                <div className="hidden md:block">
+                  {/* Table Header */}
+                  <div className="grid grid-cols-6 gap-4 pb-4 text-sm text-bagvoyage-text-secondary">
+                    <div className="col-span-1">Tag</div>
+                    <div className="col-span-1">Client</div>
+                    <div className="col-span-1">Date</div>
+                    <div className="col-span-1">Flight</div>
+                    <div className="col-span-1">Status</div>
+                    <div className="col-span-1"></div>
+                  </div>
+
+                  {/* Table Rows */}
+                  <div className="space-y-2">
+                    {allTags.map((tag, index) => (
+                      <div
+                        key={index}
+                        className="grid grid-cols-6 gap-4 items-center bg-bagvoyage-item border border-bagvoyage-border rounded-lg p-4"
+                      >
+                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
+                          {tag.tag}
+                        </div>
+                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
+                          {tag.client}
+                        </div>
+                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
+                          {tag.date}
+                        </div>
+                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
+                          {tag.flight}
+                        </div>
+                        <div className="col-span-1">
+                          <BagVoyageBadge
+                            variant={tag.status === "matched" ? "matched" : "unmatched"}
+                            className="text-xs"
+                          >
+                            {tag.status === "matched" ? "Matched" : "Unmatched"}
+                          </BagVoyageBadge>
+                        </div>
+                        <div className="col-span-1"></div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Table Rows */}
-                <div className="space-y-2">
+                {/* Mobile Cards */}
+                <div className="md:hidden space-y-4">
                   {allTags.map((tag, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className="grid grid-cols-6 gap-4 items-center bg-bagvoyage-item border border-bagvoyage-border rounded-lg p-4"
+                      className="bg-bagvoyage-item border border-bagvoyage-border rounded-lg p-4 space-y-3"
                     >
-                      <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                        {tag.tag}
-                      </div>
-                      <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                        {tag.client}
-                      </div>
-                      <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                        {tag.date}
-                      </div>
-                      <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                        {tag.flight}
-                      </div>
-                      <div className="col-span-1">
-                        <BagVoyageBadge 
+                      <div className="flex justify-between items-center">
+                        <span className="text-base font-bold text-bagvoyage-text-primary">{tag.tag}</span>
+                        <BagVoyageBadge
                           variant={tag.status === "matched" ? "matched" : "unmatched"}
                           className="text-xs"
                         >
                           {tag.status === "matched" ? "Matched" : "Unmatched"}
                         </BagVoyageBadge>
                       </div>
-                      <div className="col-span-1"></div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div>
+                          <span className="text-bagvoyage-text-secondary">Client:</span>
+                          <div className="text-bagvoyage-text-primary">{tag.client}</div>
+                        </div>
+                        <div>
+                          <span className="text-bagvoyage-text-secondary">Flight:</span>
+                          <div className="text-bagvoyage-text-primary">{tag.flight}</div>
+                        </div>
+                        <div className="col-span-2">
+                          <span className="text-bagvoyage-text-secondary">Date:</span>
+                          <div className="text-bagvoyage-text-primary">{tag.date}</div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
