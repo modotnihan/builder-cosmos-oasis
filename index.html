@@ -1,14 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello world project</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BagVoyage - Baggage Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="main-card">
+                <!-- Header Section -->
+                <div class="header">
+                    <div class="header-content">
+                        <div class="logo-section">
+                            <div class="logo">BV</div>
+                            <h1 class="title">BagVoyage</h1>
+                        </div>
+                        <div class="form-section">
+                            <div class="input-group">
+                                <label class="input-label">Date</label>
+                                <input type="text" class="input-field" placeholder="2025-08-15">
+                            </div>
+                            <div class="flight-section">
+                                <div class="input-group">
+                                    <label class="input-label">Flight</label>
+                                    <input type="text" class="input-field flight-input" placeholder="MU123 / Q2 201">
+                                </div>
+                                <button class="session-btn">Session</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <body>
-    <div id="root"></div>
+                <!-- Main Content -->
+                <div class="content">
+                    <div class="content-grid">
+                        <!-- Quick Actions -->
+                        <div class="card">
+                            <h2 class="card-title">Quick<br>Actions</h2>
+                            <div class="actions-grid">
+                                <button class="action-btn primary" onclick="navigateTo('tag-scan')">Tag</button>
+                                <button class="action-btn primary" onclick="navigateTo('retrieve-scan')">Retrieve</button>
+                                <button class="action-btn secondary" onclick="navigateTo('bag-details')">Details</button>
+                                <button class="action-btn secondary">Manual Entry</button>
+                                <div class="hid-section">
+                                    <span class="hid-label">HID</span>
+                                    <div class="toggle-switch" onclick="toggleHID()">
+                                        <div class="toggle-slider"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    <script type="module" src="/client/main.tsx"></script>
-  </body>
+                        <!-- Current Session -->
+                        <div class="card">
+                            <h2 class="card-title">Current Session</h2>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-number">68</div>
+                                    <div class="stat-label">Tags Saved</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">54</div>
+                                    <div class="stat-label">Matched</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">14</div>
+                                    <div class="stat-label">Unmatched</div>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="action-btn secondary">Export CSV</button>
+                                <button class="action-btn secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            // Add your navigation logic here
+            console.log('Navigate to:', page);
+        }
+
+        function toggleHID() {
+            const toggle = document.querySelector('.toggle-switch');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
 </html>
