@@ -4,94 +4,92 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
-  */
+   * BagVoyage Dark Theme
+   * Custom CSS variables for the baggage tracking application
+   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 217 30% 9%;  /* #11161D */
+    --foreground: 217 20% 92%; /* #E7EEF7 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 216 22% 14%; /* #171E27 */
+    --card-foreground: 217 20% 92%; /* #E7EEF7 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 216 22% 14%;
+    --popover-foreground: 217 20% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 208 78% 55%; /* #2A84DF */
+    --primary-foreground: 217 20% 92%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 24% 18%; /* #17212C */
+    --secondary-foreground: 217 20% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 216 22% 14%;
+    --muted-foreground: 211 23% 60%; /* #8EA0B5 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 208 78% 55%;
+    --accent-foreground: 217 20% 92%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 217 20% 92%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 218 25% 20%; /* #223141 */
+    --input: 220 25% 8%; /* #0E141C */
+    --ring: 208 78% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* BagVoyage specific variables */
+    --bagvoyage-background: 217 30% 9%;
+    --bagvoyage-card-bg: 216 22% 14%;
+    --bagvoyage-input-bg: 220 25% 8%;
+    --bagvoyage-border: 218 25% 20%;
+    --bagvoyage-border-dashed: 215 20% 22%;
+    --bagvoyage-text-primary: 217 20% 92%;
+    --bagvoyage-text-secondary: 211 23% 60%;
+    --bagvoyage-text-muted: 0 0% 46%;
+    --bagvoyage-button-secondary: 215 24% 18%;
+    --bagvoyage-button-border: 212 25% 22%;
+    --bagvoyage-scan-bg: 219 25% 7%;
+    --bagvoyage-item-bg: 221 25% 10%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Brand colors */
+    --brand-blue: 208 100% 65%;
+    --brand-blue-dark: 209 65% 43%;
+    --brand-blue-light: 208 75% 52%;
+    --brand-green: 151 56% 67%;
+    --brand-green-light: 151 64% 78%;
+    --brand-orange: 41 100% 64%;
+    --brand-orange-light: 41 100% 80%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 217 30% 9%;
+    --foreground: 217 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 216 22% 14%;
+    --card-foreground: 217 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 216 22% 14%;
+    --popover-foreground: 217 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 208 78% 55%;
+    --primary-foreground: 217 20% 92%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 24% 18%;
+    --secondary-foreground: 217 20% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 216 22% 14%;
+    --muted-foreground: 211 23% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 208 78% 55%;
+    --accent-foreground: 217 20% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 217 20% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 218 25% 20%;
+    --input: 220 25% 8%;
+    --ring: 208 78% 55%;
   }
 }
 
@@ -101,6 +99,99 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bagvoyage-background text-bagvoyage-text-primary;
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  /* Custom gradients for BagVoyage */
+  .bg-gradient-brand {
+    background: linear-gradient(143deg, #4AA8FF 0%, #7BDBA7 100%);
+  }
+
+  .bg-gradient-header {
+    background: linear-gradient(180deg, #121923 0%, #0E141C 100%);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(180deg, #2A84DF 0%, #206DB9 100%);
+  }
+
+  .bg-gradient-scan-blue {
+    background: radial-gradient(70.71% 70.71% at 50% 50%, rgba(74, 168, 255, 0.15) 0%, rgba(74, 168, 255, 0.00) 60%), #0B1117;
+  }
+
+  .bg-gradient-scan-orange {
+    background: radial-gradient(70.71% 70.71% at 50% 50%, rgba(255, 184, 74, 0.15) 0%, rgba(255, 184, 74, 0.00) 60%), #0B1117;
+  }
+
+  /* Status badge styles */
+  .status-matched {
+    @apply bg-[rgba(123,219,167,0.15)] text-[#9BE6C1] border-[#2D6F55];
+  }
+
+  .status-unmatched {
+    @apply bg-[rgba(255,184,74,0.12)] text-[#FFD79A] border-[#7A561E];
+  }
+
+  /* Box shadow for cards */
+  .shadow-bagvoyage {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  /* Custom viewfinder overlay */
+  .viewfinder-overlay {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.30) inset;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-bagvoyage-primary {
+    color: #E7EEF7;
+  }
+
+  .text-bagvoyage-secondary {
+    color: #8EA0B5;
+  }
+
+  .text-bagvoyage-muted {
+    color: #757575;
+  }
+
+  /* Background utilities */
+  .bg-bagvoyage {
+    background-color: #11161D;
+  }
+
+  .bg-bagvoyage-card {
+    background-color: #171E27;
+  }
+
+  .bg-bagvoyage-input {
+    background-color: #0E141C;
+  }
+
+  .bg-bagvoyage-scan {
+    background-color: #0D131A;
+  }
+
+  .bg-bagvoyage-item {
+    background-color: #0F1620;
+  }
+
+  /* Border utilities */
+  .border-bagvoyage {
+    border-color: #223141;
+  }
+
+  .border-bagvoyage-dashed {
+    border-color: #2A3A4D;
   }
 }
