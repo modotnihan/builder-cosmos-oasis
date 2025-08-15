@@ -4,13 +4,20 @@ import { cn } from "@/lib/utils"
 const BagVoyageCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-2xl border border-bagvoyage-border bg-bagvoyage-card text-bagvoyage-text-primary shadow-bagvoyage",
+      "rounded-2xl border shadow-bagvoyage",
       className
     )}
+    style={{
+      borderColor: '#223141',
+      backgroundColor: '#171E27',
+      color: '#E7EEF7',
+      boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.25)',
+      ...style
+    }}
     {...props}
   />
 ))
