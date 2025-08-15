@@ -43,16 +43,16 @@ export default function TagScan() {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Camera Section */}
               <div className="lg:col-span-2">
-                <div className="bg-bagvoyage-scan border border-dashed border-bagvoyage-border-dashed rounded-2xl p-4 h-[410px] relative">
+                <div className="bg-bagvoyage-scan border border-dashed border-bagvoyage-border-dashed rounded-2xl p-4 h-[300px] md:h-[410px] relative">
                   {/* Viewfinder */}
-                  <div className="bg-gradient-scan-blue rounded-2xl border border-bagvoyage-border-dashed p-4 h-80 relative">
-                    <div className="viewfinder-overlay rounded-lg w-56 h-40 mx-auto mt-20 bg-transparent"></div>
+                  <div className="bg-gradient-scan-blue rounded-2xl border border-bagvoyage-border-dashed p-4 h-56 md:h-80 relative">
+                    <div className="viewfinder-overlay rounded-lg w-40 h-28 md:w-56 md:h-40 mx-auto mt-14 md:mt-20 bg-transparent"></div>
                   </div>
-                  
+
                   {/* Bottom Controls */}
                   <div className="absolute bottom-4 left-4 flex gap-4">
                     <BagVoyageButton variant="secondary" size="sm">
