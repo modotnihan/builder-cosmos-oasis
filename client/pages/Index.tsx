@@ -12,27 +12,27 @@ export default function Index() {
         {/* Main Container */}
         <BagVoyageCard className="w-full max-w-4xl mx-auto">
           {/* Header */}
-          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-6 py-7">
-            <div className="flex items-center justify-between">
+          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-4 md:px-6 py-7">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <Logo />
                 <h1 className="text-xl font-bold text-bagvoyage-text-primary">BagVoyage</h1>
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-4">
-                  <BagVoyageInput 
-                    label="Date" 
-                    placeholder="2025-08-15" 
-                    className="w-48"
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <BagVoyageInput
+                    label="Date"
+                    placeholder="2025-08-15"
+                    className="w-full sm:w-48"
                   />
-                  <BagVoyageInput 
-                    label="Flight" 
-                    placeholder="MU123 / Q2 201" 
-                    className="w-36"
+                  <BagVoyageInput
+                    label="Flight"
+                    placeholder="MU123 / Q2 201"
+                    className="w-full sm:w-36"
                   />
                 </div>
-                <div className="mt-6">
+                <div className="sm:mt-6">
                   <BagVoyageButton variant="secondary" size="sm">
                     Session
                   </BagVoyageButton>
