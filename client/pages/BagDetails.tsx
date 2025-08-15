@@ -37,37 +37,37 @@ export default function BagDetails() {
         {/* Main Container */}
         <BagVoyageCard className="w-full max-w-4xl mx-auto">
           {/* Header */}
-          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-6 py-16">
-            <div className="flex items-start justify-between">
+          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-4 md:px-6 py-8 md:py-16">
+            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
               <div className="flex items-center gap-4">
                 <Link to="/" className="flex items-center gap-1 text-bagvoyage-text-secondary hover:text-bagvoyage-text-primary transition-colors">
                   <ChevronLeft className="w-4 h-4" />
                   <span className="font-bold">Home</span>
                 </Link>
-                <h1 className="text-2xl font-bold text-bagvoyage-text-primary">Bag Details</h1>
+                <h1 className="text-xl md:text-2xl font-bold text-bagvoyage-text-primary">Bag Details</h1>
               </div>
-              
+
               <div className="space-y-4">
-                <BagVoyageInput 
+                <BagVoyageInput
                   label="Date"
-                  placeholder="2025-08-15" 
-                  className="w-48"
+                  placeholder="2025-08-15"
+                  className="w-full md:w-48"
                 />
-                <BagVoyageInput 
+                <BagVoyageInput
                   label="Flight"
-                  placeholder="Q2 201" 
-                  className="w-48"
+                  placeholder="Q2 201"
+                  className="w-full md:w-48"
                 />
-                <BagVoyageInput 
+                <BagVoyageInput
                   label="Client (optional)"
-                  placeholder="All clients" 
-                  className="w-48"
+                  placeholder="All clients"
+                  className="w-full md:w-48"
                 />
-                <div className="flex gap-2">
-                  <BagVoyageButton variant="secondary">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <BagVoyageButton variant="secondary" className="w-full sm:w-auto">
                     Export CSV
                   </BagVoyageButton>
-                  <BagVoyageButton variant="secondary">
+                  <BagVoyageButton variant="secondary" className="w-full sm:w-auto">
                     View
                   </BagVoyageButton>
                 </div>
