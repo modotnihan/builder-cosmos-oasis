@@ -1,10 +1,5 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
-import { ChevronLeft } from "lucide-react"
-import { BagVoyageCard, BagVoyageCardContent, BagVoyageCardHeader, BagVoyageCardTitle } from "@/components/ui/bagvoyage-card"
-import { BagVoyageButton } from "@/components/ui/bagvoyage-button"
-import { BagVoyageInput } from "@/components/ui/bagvoyage-input"
-import { BagVoyageBadge } from "@/components/ui/bagvoyage-badge"
 
 export default function BagDetails() {
   const allTags = [
@@ -32,138 +27,224 @@ export default function BagDetails() {
   ]
 
   return (
-    <div className="min-h-screen bg-bagvoyage-background">
-      <div className="max-w-5xl mx-auto p-4">
+    <div style={{ minHeight: '100vh', backgroundColor: '#11161D', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '1rem' }}>
         {/* Main Container */}
-        <BagVoyageCard className="w-full max-w-4xl mx-auto">
+        <div 
+          style={{
+            width: '100%',
+            maxWidth: '64rem',
+            margin: '0 auto',
+            borderRadius: '1rem',
+            border: '1px solid #223141',
+            backgroundColor: '#171E27',
+            color: '#E7EEF7',
+            boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.25)'
+          }}
+        >
           {/* Header */}
-          <div className="w-full border-b border-bagvoyage-border bg-gradient-header rounded-t-2xl px-4 md:px-6 py-8 md:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <Link to="/" className="flex items-center gap-1 text-bagvoyage-text-secondary hover:text-bagvoyage-text-primary transition-colors">
-                  <ChevronLeft className="w-4 h-4" />
-                  <span className="font-bold">Home</span>
+          <div 
+            style={{
+              width: '100%',
+              borderBottom: '1px solid #223141',
+              background: 'linear-gradient(180deg, #121923 0%, #0E141C 100%)',
+              borderRadius: '1rem 1rem 0 0',
+              padding: '2rem 1.5rem'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <Link to="/" style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.25rem', 
+                  color: '#8EA0B5', 
+                  textDecoration: 'none',
+                  fontWeight: 'bold'
+                }}>
+                  ← Home
                 </Link>
-                <h1 className="text-xl md:text-2xl font-bold text-bagvoyage-text-primary">Bag Details</h1>
+                <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#E7EEF7', margin: 0 }}>
+                  Bag Details
+                </h1>
               </div>
-
-              <div className="space-y-4">
-                <BagVoyageInput
-                  label="Date"
-                  placeholder="2025-08-15"
-                  className="w-full md:w-48"
-                />
-                <BagVoyageInput
-                  label="Flight"
-                  placeholder="Q2 201"
-                  className="w-full md:w-48"
-                />
-                <BagVoyageInput
-                  label="Client (optional)"
-                  placeholder="All clients"
-                  className="w-full md:w-48"
-                />
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <BagVoyageButton variant="secondary" className="w-full sm:w-auto">
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', minWidth: '12rem' }}>
+                {/* Date Input */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                  <label style={{ fontSize: '0.75rem', color: '#8EA0B5' }}>Date</label>
+                  <input
+                    type="text"
+                    placeholder="2025-08-15"
+                    style={{
+                      width: '100%',
+                      height: '2.5rem',
+                      borderRadius: '0.75rem',
+                      border: '1px solid #223141',
+                      backgroundColor: '#0E141C',
+                      padding: '0 0.75rem',
+                      fontSize: '0.875rem',
+                      color: '#757575'
+                    }}
+                  />
+                </div>
+                
+                {/* Flight Input */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                  <label style={{ fontSize: '0.75rem', color: '#8EA0B5' }}>Flight</label>
+                  <input
+                    type="text"
+                    placeholder="Q2 201"
+                    style={{
+                      width: '100%',
+                      height: '2.5rem',
+                      borderRadius: '0.75rem',
+                      border: '1px solid #223141',
+                      backgroundColor: '#0E141C',
+                      padding: '0 0.75rem',
+                      fontSize: '0.875rem',
+                      color: '#757575'
+                    }}
+                  />
+                </div>
+                
+                {/* Client Input */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                  <label style={{ fontSize: '0.75rem', color: '#8EA0B5' }}>Client (optional)</label>
+                  <input
+                    type="text"
+                    placeholder="All clients"
+                    style={{
+                      width: '100%',
+                      height: '2.5rem',
+                      borderRadius: '0.75rem',
+                      border: '1px solid #223141',
+                      backgroundColor: '#0E141C',
+                      padding: '0 0.75rem',
+                      fontSize: '0.875rem',
+                      color: '#757575'
+                    }}
+                  />
+                </div>
+                
+                {/* Action Buttons */}
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    style={{
+                      flex: 1,
+                      padding: '0.875rem 1rem',
+                      borderRadius: '0.75rem',
+                      border: '1px solid #27384B',
+                      backgroundColor: '#17212C',
+                      color: '#E7EEF7',
+                      fontSize: '0.8125rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer'
+                    }}
+                  >
                     Export CSV
-                  </BagVoyageButton>
-                  <BagVoyageButton variant="secondary" className="w-full sm:w-auto">
+                  </button>
+                  <button
+                    style={{
+                      flex: 1,
+                      padding: '0.875rem 1rem',
+                      borderRadius: '0.75rem',
+                      border: '1px solid #27384B',
+                      backgroundColor: '#17212C',
+                      color: '#E7EEF7',
+                      fontSize: '0.8125rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer'
+                    }}
+                  >
                     View
-                  </BagVoyageButton>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-4 md:p-6">
-            <BagVoyageCard>
-              <BagVoyageCardHeader>
-                <BagVoyageCardTitle className="text-lg">All Tags</BagVoyageCardTitle>
-              </BagVoyageCardHeader>
-              <BagVoyageCardContent>
-                {/* Desktop Table */}
-                <div className="hidden md:block">
-                  {/* Table Header */}
-                  <div className="grid grid-cols-6 gap-4 pb-4 text-sm text-bagvoyage-text-secondary">
-                    <div className="col-span-1">Tag</div>
-                    <div className="col-span-1">Client</div>
-                    <div className="col-span-1">Date</div>
-                    <div className="col-span-1">Flight</div>
-                    <div className="col-span-1">Status</div>
-                    <div className="col-span-1"></div>
-                  </div>
-
-                  {/* Table Rows */}
-                  <div className="space-y-2">
-                    {allTags.map((tag, index) => (
-                      <div
-                        key={index}
-                        className="grid grid-cols-6 gap-4 items-center bg-bagvoyage-item border border-bagvoyage-border rounded-lg p-4"
-                      >
-                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                          {tag.tag}
-                        </div>
-                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                          {tag.client}
-                        </div>
-                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                          {tag.date}
-                        </div>
-                        <div className="col-span-1 text-base text-bagvoyage-text-primary">
-                          {tag.flight}
-                        </div>
-                        <div className="col-span-1">
-                          <BagVoyageBadge
-                            variant={tag.status === "matched" ? "matched" : "unmatched"}
-                            className="text-xs"
-                          >
-                            {tag.status === "matched" ? "Matched" : "Unmatched"}
-                          </BagVoyageBadge>
-                        </div>
-                        <div className="col-span-1"></div>
-                      </div>
-                    ))}
-                  </div>
+          <div style={{ padding: '1.5rem' }}>
+            <div style={{
+              borderRadius: '1rem',
+              border: '1px solid #223141',
+              backgroundColor: '#171E27',
+              padding: '1.5rem',
+              boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.25)'
+            }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 'bold', color: '#E7EEF7', marginBottom: '1rem' }}>All Tags</h3>
+              
+              {/* Desktop Table */}
+              <div style={{ display: 'block' }}>
+                {/* Table Header */}
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(6, 1fr)', 
+                  gap: '1rem', 
+                  paddingBottom: '1rem', 
+                  fontSize: '0.875rem', 
+                  color: '#8EA0B5',
+                  borderBottom: '1px solid #223141',
+                  marginBottom: '1rem'
+                }}>
+                  <div>Tag</div>
+                  <div>Client</div>
+                  <div>Date</div>
+                  <div>Flight</div>
+                  <div>Status</div>
+                  <div></div>
                 </div>
 
-                {/* Mobile Cards */}
-                <div className="md:hidden space-y-4">
+                {/* Table Rows */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {allTags.map((tag, index) => (
-                    <div
+                    <div 
                       key={index}
-                      className="bg-bagvoyage-item border border-bagvoyage-border rounded-lg p-4 space-y-3"
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(6, 1fr)',
+                        gap: '1rem',
+                        alignItems: 'center',
+                        backgroundColor: '#0F1620',
+                        border: '1px solid #223141',
+                        borderRadius: '0.5rem',
+                        padding: '1rem'
+                      }}
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="text-base font-bold text-bagvoyage-text-primary">{tag.tag}</span>
-                        <BagVoyageBadge
-                          variant={tag.status === "matched" ? "matched" : "unmatched"}
-                          className="text-xs"
-                        >
+                      <div style={{ fontSize: '1rem', color: '#E7EEF7' }}>
+                        {tag.tag}
+                      </div>
+                      <div style={{ fontSize: '1rem', color: '#E7EEF7' }}>
+                        {tag.client}
+                      </div>
+                      <div style={{ fontSize: '1rem', color: '#E7EEF7' }}>
+                        {tag.date}
+                      </div>
+                      <div style={{ fontSize: '1rem', color: '#E7EEF7' }}>
+                        {tag.flight}
+                      </div>
+                      <div>
+                        <span style={{
+                          padding: '0.25rem 0.75rem',
+                          borderRadius: '9999px',
+                          border: tag.status === "matched" ? '1px solid #2D6F55' : '1px solid #7A561E',
+                          backgroundColor: tag.status === "matched" ? 'rgba(123, 219, 167, 0.15)' : 'rgba(255, 184, 74, 0.12)',
+                          color: tag.status === "matched" ? '#9BE6C1' : '#FFD79A',
+                          fontSize: '0.75rem',
+                          fontWeight: '400'
+                        }}>
                           {tag.status === "matched" ? "Matched" : "Unmatched"}
-                        </BagVoyageBadge>
+                        </span>
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div>
-                          <span className="text-bagvoyage-text-secondary">Client:</span>
-                          <div className="text-bagvoyage-text-primary">{tag.client}</div>
-                        </div>
-                        <div>
-                          <span className="text-bagvoyage-text-secondary">Flight:</span>
-                          <div className="text-bagvoyage-text-primary">{tag.flight}</div>
-                        </div>
-                        <div className="col-span-2">
-                          <span className="text-bagvoyage-text-secondary">Date:</span>
-                          <div className="text-bagvoyage-text-primary">{tag.date}</div>
-                        </div>
-                      </div>
+                      <div></div>
                     </div>
                   ))}
                 </div>
-              </BagVoyageCardContent>
-            </BagVoyageCard>
+              </div>
+            </div>
           </div>
-        </BagVoyageCard>
+        </div>
       </div>
     </div>
   )
