@@ -38,13 +38,17 @@ BagVoyageCardHeader.displayName = "BagVoyageCardHeader"
 const BagVoyageCardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-bold leading-none tracking-tight text-bagvoyage-text-primary",
+      "text-2xl font-bold leading-none tracking-tight",
       className
     )}
+    style={{
+      color: '#E7EEF7',
+      ...style
+    }}
     {...props}
   />
 ))
