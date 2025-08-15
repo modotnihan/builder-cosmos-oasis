@@ -1,27 +1,29 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BagVoyageCard, BagVoyageCardContent, BagVoyageCardHeader, BagVoyageCardTitle } from "@/components/ui/bagvoyage-card";
+import { BagVoyageButton } from "@/components/ui/bagvoyage-button";
+import { Logo } from "@/components/ui/logo";
 
-const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname,
-    );
-  }, [location.pathname]);
-
+export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen bg-bagvoyage-background flex items-center justify-center p-4">
+      <BagVoyageCard className="w-full max-w-md">
+        <BagVoyageCardHeader className="text-center">
+          <div className="flex justify-center mb-4">
+            <Logo size="lg" />
+          </div>
+          <BagVoyageCardTitle className="text-2xl">Page Not Found</BagVoyageCardTitle>
+          <p className="text-bagvoyage-text-secondary">
+            The page you're looking for doesn't exist or is currently under development.
+          </p>
+        </BagVoyageCardHeader>
+        <BagVoyageCardContent className="text-center">
+          <Link to="/">
+            <BagVoyageButton className="w-full">
+              Return to Home
+            </BagVoyageButton>
+          </Link>
+        </BagVoyageCardContent>
+      </BagVoyageCard>
     </div>
   );
-};
-
-export default NotFound;
+}
