@@ -152,46 +152,8 @@
 }
 
 @layer utilities {
-  /* Text utilities */
-  .text-bagvoyage-primary {
-    color: #E7EEF7;
-  }
-
-  .text-bagvoyage-secondary {
-    color: #8EA0B5;
-  }
-
-  .text-bagvoyage-muted {
-    color: #757575;
-  }
-
-  /* Background utilities */
-  .bg-bagvoyage {
+  /* Override body background for dark theme */
+  .bg-bagvoyage-background {
     background-color: #11161D;
-  }
-
-  .bg-bagvoyage-card {
-    background-color: #171E27;
-  }
-
-  .bg-bagvoyage-input {
-    background-color: #0E141C;
-  }
-
-  .bg-bagvoyage-scan {
-    background-color: #0D131A;
-  }
-
-  .bg-bagvoyage-item {
-    background-color: #0F1620;
-  }
-
-  /* Border utilities */
-  .border-bagvoyage {
-    border-color: #223141;
-  }
-
-  .border-bagvoyage-dashed {
-    border-color: #2A3A4D;
   }
 }
